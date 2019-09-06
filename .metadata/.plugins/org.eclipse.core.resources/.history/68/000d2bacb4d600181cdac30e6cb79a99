@@ -1,0 +1,30 @@
+/*
+ * 质数就是除它本身和1之外再无可被它整除的数
+ * 
+ * 题目：判断101-200之间有多少个素数，并输出所有素数。 
+
+素数又叫质数，就是除了1和它本身之外，再也没有整数能被它整除的数。也就是素数只有两个因子。
+ * */
+public class Main3 {
+
+	public static void main(String[] args) {
+		int i,j,m,n,x;
+		m=0;n=0;x=0;
+		for(i=101;i<200;i++) {
+			for(j=1;j<=i;j++) {
+				n=i%j;
+				if(n==0)m=++m;
+			}
+			if(m==2) {
+				System.out.print(i+" ");
+				x=x++;
+			}
+			m=0;
+		}
+		System.out.println();
+		System.out.println("输出101-200之间的质数："+"个数："+x);
+		
+
+	}
+
+}

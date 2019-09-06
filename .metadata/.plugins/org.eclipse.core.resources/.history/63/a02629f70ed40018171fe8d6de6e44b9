@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+	public int findDuplicate(int[] nums) {
+	    if(nums == null||nums.length == 0) {
+	        return -1;
+	    }
+	    // 修改数组的方法 O(n)
+	    for (int i = 0; i < nums.length; i++) {
+	        while (nums[i] - 1 != i) {
+	            int b = nums[i] - 1; // i所在的index
+	            int e = nums[b]; // i所在的index的值
+	            if (e == nums[i]) {
+	                return e;
+	            } else { // 不一样 swap i&b
+	                int tmp = nums[b];
+	                nums[b] = nums[i];
+	                nums[i] = tmp;
+	            }
+	        }
+	    }
+	    return 0;
+	}
